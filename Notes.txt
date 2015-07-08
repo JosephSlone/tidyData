@@ -1,0 +1,7 @@
+features.txt --> The Column Headings for the main data tables.
+
+y_test.txt is column that has the coded type of activity for each row in x_test.txt
+
+activity_labels is the text that corresponds to the codes in y_test.txt
+
+the files x_test.txt, y_test.txt, subject_test.txt correspond on a row to row basis.

@@ -6,8 +6,11 @@ fileBuffer <- getBinaryURL(URL, ssl.verifypeer=FALSE)
 fileHandle = file(fileName, open="wb")
 writeBin(fileBuffer, fileHandle)
 close(fileHandle)
+fileBuffer <- NULL
 unzip(fileName)
 setwd("UCI HAR Dataset/test/")
 subjectData <- read.table("subject_test.txt")
 trainData <- read.table("X_test.txt")
 allTrain<- merge(subjectData, trainData, by="row.names")
+
+# Exploring
