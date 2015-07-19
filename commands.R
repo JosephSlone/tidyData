@@ -84,7 +84,7 @@ colnames(activity.labels) <- c("ActivityCode", "ActivityName")
 test.data <- read.table("UCI HAR Dataset/test/X_test.txt")
 colnames(test.data) = feature.names[,2]
 
-# testData <- merge(subjectData, trainData, by="row.names")
+test.data.merged <- merge(test.subjects, test.data, by="row.names")
 
 test.activity.labeled <- merge(test.activity, activity.labels, all.x=TRUE, all.y=FALSE)
 
