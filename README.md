@@ -8,4 +8,4 @@ While not part of the project description, I chose to create an R script that wi
 
 The main routine is found in **run_analysis.R.** It will, when sourced, provide a function (run_analysis()) which will perform all of the processing needed to create the summary data set.  A secondary function (makeAllData()) will return the data table that run_analysis() summarizes.
 
-The other two functions that are  contained in **Download.R** are for internal use only.  They perform all of the parsing and joining required for the Train and Test data sets.
+The other two functions that are  contained in **run_analysis.R.** are for internal use only.  They perform all of the parsing and joining required for the Train and Test data sets.
