@@ -1,4 +1,5 @@
 # Merge files together
+# Joseph Slone 7/24/2015
 
 library(data.table)
 library(dplyr)
@@ -95,11 +96,16 @@ makeTrainData <- function(){
     return(train.data.activity)
 }
 
-run_analysis <- function() {
-
+makeAllData <- function() {
 	train.data <- makeTrainData()
 	test.data <- makeTestData()
 	all.data <- rbindlist(list(train.data, test.data))
+	return(all.data)
+}
+
+run_analysis <- function() {
+
+	all.data <- makeAllData()
 	all.data.summary <- all.data %>% group_by(Subject, ActivityName) %>% summarise_each(funs(mean), matches("std|mean"))
 	setorderv(all.data.summary, c("Subject","ActivityName"))
     return(all.data.summary)
